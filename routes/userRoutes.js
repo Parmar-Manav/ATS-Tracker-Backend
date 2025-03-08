@@ -4,7 +4,7 @@ import {
   loginUser,
   registerUser,
 } from "../controllers/userController.js";
-import { validateToken } from "../middleware/validateTokenHandler.js";
+import { validateToken } from "../middlewares/validateTokenHandler.js";
 
 export const userRouter = express.Router();
 

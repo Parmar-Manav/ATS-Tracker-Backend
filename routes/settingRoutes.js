@@ -7,7 +7,7 @@ import {
   updateSetting,
   deleteSetting,
 } from "../controllers/settingController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllSettings);
 router.get("/:id", authMiddleware, getSettingById);

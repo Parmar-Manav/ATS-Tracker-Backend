@@ -23,12 +23,12 @@ const fileFilter = (req, file, cb) => {
   }
 }
 
-const multerMiddleware = multer({
+const multermiddleware = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB file size limit
 })
 
-export default multerMiddleware
-export const single = multerMiddleware.single
+export default multermiddleware
+export const single = multermiddleware.single
 

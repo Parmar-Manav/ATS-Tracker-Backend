@@ -7,7 +7,7 @@ import {
   updateJobExternalPosting,
   deleteJobExternalPosting,
 } from "../controllers/jobExternalPostingController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllJobExternalPostings);
 router.get("/:id", authMiddleware, getJobExternalPostingById);

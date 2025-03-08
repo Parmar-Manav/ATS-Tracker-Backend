@@ -7,7 +7,7 @@ import {
   updateCalendarEvent,
   deleteCalendarEvent,
 } from "../controllers/calendarController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllCalendarEvents);
 router.get("/:id", authMiddleware, getCalendarEventById);

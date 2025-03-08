@@ -7,7 +7,7 @@ import {
   updateAnalytics,
   deleteAnalytics,
 } from "../controllers/analyticsController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllAnalytics);
 router.get("/:id", authMiddleware, getAnalyticsById);

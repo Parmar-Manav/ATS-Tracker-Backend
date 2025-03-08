@@ -7,7 +7,7 @@ import {
   updateUserActivity,
   deleteUserActivity,
 } from "../controllers/userActivityController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllUserActivities);
 router.get("/:id", authMiddleware, getUserActivityById);

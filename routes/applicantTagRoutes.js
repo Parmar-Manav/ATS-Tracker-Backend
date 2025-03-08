@@ -7,7 +7,7 @@ import {
   updateApplicantTag,
   deleteApplicantTag,
 } from "../controllers/applicantTagController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllApplicantTags);
 router.get("/:id", authMiddleware, getApplicantTagById);

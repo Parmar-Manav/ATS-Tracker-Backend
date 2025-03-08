@@ -7,7 +7,7 @@ import {
   updateOnboardingTemplate,
   deleteOnboardingTemplate,
 } from "../controllers/onboardingTemplateController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOnboardingTemplates);
 router.get("/:id", authMiddleware, getOnboardingTemplateById);

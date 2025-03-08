@@ -7,7 +7,7 @@ import {
   updateWorkflowAutomation,
   deleteWorkflowAutomation,
 } from "../controllers/workflowAutomationController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllWorkflowAutomations);
 router.get("/:id", authMiddleware, getWorkflowAutomationById);

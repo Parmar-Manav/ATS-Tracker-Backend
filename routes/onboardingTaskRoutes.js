@@ -7,7 +7,7 @@ import {
   updateOnboardingTask,
   deleteOnboardingTask,
 } from "../controllers/onboardingTaskController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOnboardingTasks);
 router.get("/:id", authMiddleware, getOnboardingTaskById);

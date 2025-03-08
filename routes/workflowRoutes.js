@@ -7,7 +7,7 @@ import {
   updateWorkflow,
   deleteWorkflow,
 } from "../controllers/workflowController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllWorkflows);
 router.get("/:id", authMiddleware, getWorkflowById);

@@ -7,7 +7,7 @@ import {
   updateApplicationStageHistory,
   deleteApplicationStageHistory,
 } from "../controllers/applicationStageHistoryController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllApplicationStageHistories);
 router.get("/:id", authMiddleware, getApplicationStageHistoryById);

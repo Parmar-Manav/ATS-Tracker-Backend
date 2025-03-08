@@ -7,7 +7,7 @@ import {
   updateClient,
   deleteClient,
 } from "../controllers/clientController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllClients);
 router.get("/:id", authMiddleware, getClientById);

@@ -7,7 +7,7 @@ import {
   updateClientExecutive,
   deleteClientExecutive,
 } from "../controllers/clientExecutiveController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllClientExecutives);
 router.get("/:id", authMiddleware, getClientExecutiveById);

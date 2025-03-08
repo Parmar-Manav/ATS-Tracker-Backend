@@ -7,7 +7,7 @@ import {
   updateResumeSection,
   deleteResumeSection,
 } from "../controllers/resumeSectionController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllResumeSections);
 router.get("/:id", authMiddleware, getResumeSectionById);

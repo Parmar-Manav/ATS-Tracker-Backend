@@ -7,7 +7,7 @@ import {
   updateScore,
   deleteScore,
 } from "../controllers/scoreController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllScores);
 router.get("/:id", authMiddleware, getScoreById);

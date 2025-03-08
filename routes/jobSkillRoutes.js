@@ -7,7 +7,7 @@ import {
   updateJobSkill,
   deleteJobSkill,
 } from "../controllers/jobSkillController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllJobSkills);
 router.get("/:id", authMiddleware, getJobSkillById);

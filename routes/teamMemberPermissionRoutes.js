@@ -7,7 +7,7 @@ import {
   updateTeamMemberPermission,
   deleteTeamMemberPermission,
 } from "../controllers/teamMemberPermissionController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllTeamMemberPermissions);
 router.get("/:id", authMiddleware, getTeamMemberPermissionById);

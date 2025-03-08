@@ -7,7 +7,7 @@ import {
   updateJobPreference,
   deleteJobPreference,
 } from "../controllers/jobPreferenceController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllJobPreferences);
 router.get("/:id", authMiddleware, getJobPreferenceById);

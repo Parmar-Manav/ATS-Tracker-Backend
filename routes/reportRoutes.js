@@ -7,7 +7,7 @@ import {
   updateReport,
   deleteReport,
 } from "../controllers/reportController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllReports);
 router.get("/:id", authMiddleware, getReportById);

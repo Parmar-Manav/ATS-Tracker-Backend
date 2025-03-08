@@ -7,7 +7,7 @@ import {
   updateDocumentContent,
   deleteDocumentContent,
 } from "../controllers/documentContentController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllDocumentContents);
 router.get("/:id", authMiddleware, getDocumentContentById);

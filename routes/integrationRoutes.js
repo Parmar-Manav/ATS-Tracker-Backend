@@ -7,7 +7,7 @@ import {
   updateIntegration,
   deleteIntegration,
 } from "../controllers/integrationController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllIntegrations);
 router.get("/:id", authMiddleware, getIntegrationById);

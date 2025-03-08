@@ -7,7 +7,7 @@ import {
   updateSkill,
   deleteSkill,
 } from "../controllers/skillController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllSkills);
 router.get("/:id", authMiddleware, getSkillById);

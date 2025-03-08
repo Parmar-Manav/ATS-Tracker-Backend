@@ -7,7 +7,7 @@ import {
   updateApplication,
   deleteApplication,
 } from "../controllers/applicationController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllApplications);
 router.get("/:id", authMiddleware, getApplicationById);

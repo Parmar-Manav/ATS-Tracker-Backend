@@ -7,7 +7,7 @@ import {
   updateOperationLog,
   deleteOperationLog,
 } from "../controllers/operationLogController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOperationLogs);
 router.get("/:id", authMiddleware, getOperationLogById);

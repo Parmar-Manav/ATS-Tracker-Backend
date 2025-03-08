@@ -7,7 +7,7 @@ import {
   updateTeamMember,
   deleteTeamMember,
 } from "../controllers/teamMemberController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllTeamMembers);
 router.get("/:id", authMiddleware, getTeamMemberById);

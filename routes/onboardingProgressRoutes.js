@@ -7,7 +7,7 @@ import {
   updateOnboardingProgress,
   deleteOnboardingProgress,
 } from "../controllers/onboardingProgressController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOnboardingProgresses);
 router.get("/:id", authMiddleware, getOnboardingProgressById);

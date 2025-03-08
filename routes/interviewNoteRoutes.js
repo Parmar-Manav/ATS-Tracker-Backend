@@ -7,7 +7,7 @@ import {
   updateInterviewNote,
   deleteInterviewNote,
 } from "../controllers/interviewNoteController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllInterviewNotes);
 router.get("/:id", authMiddleware, getInterviewNoteById);

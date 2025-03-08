@@ -8,7 +8,7 @@
 // import routes from './routes/index.js';
 // import { SetupAssociations } from './config/Association.js';
 // import  errorHandler  from './middleware/errorHandler.js';
-// import { loggerMiddleware } from './middleware/logger.js';
+// import { loggermiddleware } from './middleware/logger.js';
 // import rateLimiter from './middleware/rateLimiter.js';
 
 // dotenv.config();
@@ -21,7 +21,7 @@
 // app.use(morgan('combined'));
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
-// app.use(loggerMiddleware);
+// app.use(loggermiddleware);
 // app.use(rateLimiter);
 
 // // Apply associations
@@ -54,7 +54,7 @@ import morgan from "morgan"
 import dotenv from "dotenv"
 import { sequelize } from "./config/sequelize.js"
 import * as models from "./models/index.js"
-// import routes from "./routes/index.js"
+import routes from "./routes/index.js"
 import { SetupAssociations } from "./config/Association.js"
 import errorHandler from "./middlewares/errorHandler.js"
 import { loggerMiddleware } from "./middlewares/logger.js"
@@ -76,7 +76,7 @@ app.use(loggerMiddleware)
 app.use(rateLimiter)
 
 // Apply associations
-// app.use("/api", routes)
+app.use("/api", routes)
 
 app.use(errorHandler)
 // const startServer = async () => {

@@ -7,7 +7,7 @@ import {
   updateSystemLog,
   deleteSystemLog,
 } from "../controllers/systemLogController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllSystemLogs);
 router.get("/:id", authMiddleware, getSystemLogById);

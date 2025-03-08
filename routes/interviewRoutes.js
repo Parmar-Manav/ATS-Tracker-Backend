@@ -7,7 +7,7 @@ import {
   updateInterview,
   deleteInterview,
 } from "../controllers/interviewController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllInterviews);
 router.get("/:id", authMiddleware, getInterviewById);

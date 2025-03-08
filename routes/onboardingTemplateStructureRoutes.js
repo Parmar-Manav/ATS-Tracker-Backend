@@ -7,7 +7,7 @@ import {
   updateOnboardingTemplateStructure,
   deleteOnboardingTemplateStructure,
 } from "../controllers/onboardingTemplateStructureController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOnboardingTemplateStructures);
 router.get("/:id", authMiddleware, getOnboardingTemplateStructureById);

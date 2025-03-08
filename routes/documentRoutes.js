@@ -7,8 +7,8 @@ import {
   updateDocument,
   deleteDocument,
 } from "../controllers/documentController.js"
-import authMiddleware from "../middleware/authMiddleware.js"
-import upload from "../middleware/multerMiddleware.js"
+import authMiddleware from "../middlewares/authMiddleware.js";
+import upload from "../middlewares/multermiddleware.js"
 
 router.get("/", authMiddleware, getAllDocuments)
 router.get("/:id", authMiddleware, getDocumentById)

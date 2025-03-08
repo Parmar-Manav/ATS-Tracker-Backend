@@ -7,7 +7,7 @@ import {
   updateReferral,
   deleteReferral,
 } from "../controllers/referralController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllReferrals);
 router.get("/:id", authMiddleware, getReferralById);

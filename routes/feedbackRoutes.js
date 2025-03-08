@@ -7,7 +7,7 @@ import {
   updateFeedback,
   deleteFeedback,
 } from "../controllers/feedbackController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllFeedback);
 router.get("/:id", authMiddleware, getFeedbackById);

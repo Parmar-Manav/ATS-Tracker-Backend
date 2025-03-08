@@ -7,7 +7,7 @@ import {
   updateOperation,
   deleteOperation,
 } from "../controllers/operationController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 router.get("/", authMiddleware, getAllOperations);
 router.get("/:id", authMiddleware, getOperationById);
