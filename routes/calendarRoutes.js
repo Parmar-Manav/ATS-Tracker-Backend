@@ -9,10 +9,10 @@ import {
 } from "../controllers/calendarController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllCalendarEvents);
-router.get("/:id", authMiddleware, getCalendarEventById);
-router.post("/", authMiddleware, createCalendarEvent);
-router.put("/:id", authMiddleware, updateCalendarEvent);
-router.delete("/:id", authMiddleware, deleteCalendarEvent);
+router.get("/", getAllCalendarEvents);
+router.get("/:id", getCalendarEventById);
+router.post("/", createCalendarEvent);
+router.put("/:id", updateCalendarEvent);
+router.delete("/:id", deleteCalendarEvent);
 
 export default router;

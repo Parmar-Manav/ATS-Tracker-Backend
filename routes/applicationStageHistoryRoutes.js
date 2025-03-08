@@ -9,10 +9,10 @@ import {
 } from "../controllers/applicationStageHistoryController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllApplicationStageHistories);
-router.get("/:id", authMiddleware, getApplicationStageHistoryById);
-router.post("/", authMiddleware, createApplicationStageHistory);
-router.put("/:id", authMiddleware, updateApplicationStageHistory);
-router.delete("/:id", authMiddleware, deleteApplicationStageHistory);
+router.get("/", getAllApplicationStageHistories);
+router.get("/:id", getApplicationStageHistoryById);
+router.post("/", createApplicationStageHistory);
+router.put("/:id", updateApplicationStageHistory);
+router.delete("/:id", deleteApplicationStageHistory);
 
 export default router;

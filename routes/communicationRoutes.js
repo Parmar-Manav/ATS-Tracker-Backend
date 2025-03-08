@@ -9,10 +9,10 @@ import {
 } from "../controllers/communicationController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllCommunications);
-router.get("/:id", authMiddleware, getCommunicationById);
-router.post("/", authMiddleware, createCommunication);
-router.put("/:id", authMiddleware, updateCommunication);
-router.delete("/:id", authMiddleware, deleteCommunication);
+router.get("/", getAllCommunications);
+router.get("/:id", getCommunicationById);
+router.post("/", createCommunication);
+router.put("/:id", updateCommunication);
+router.delete("/:id", deleteCommunication);
 
 export default router;

@@ -9,10 +9,10 @@ import {
 } from "../controllers/settingController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllSettings);
-router.get("/:id", authMiddleware, getSettingById);
-router.post("/", authMiddleware, createSetting);
-router.put("/:id", authMiddleware, updateSetting);
-router.delete("/:id", authMiddleware, deleteSetting);
+router.get("/", getAllSettings);
+router.get("/:id", getSettingById);
+router.post("/", createSetting);
+router.put("/:id", updateSetting);
+router.delete("/:id", deleteSetting);
 
 export default router;

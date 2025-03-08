@@ -60,20 +60,21 @@ import errorHandler from "./middlewares/errorHandler.js"
 import { loggerMiddleware } from "./middlewares/logger.js"
 import rateLimiter from "./middlewares/rateLimiter.js"
 import { dbConnect, dbSync } from "./config/dbConfig.js";
-
+import bodyparser from "body-parser"
 
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.use(cors())
-app.use(helmet())
-app.use(morgan("combined"))
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(loggerMiddleware)
-app.use(rateLimiter)
+// app.use(cors())
+// app.use(helmet())
+// app.use(morgan("combined"))
+// app.use(express.json())
+app.use(bodyparser.urlencoded({ extended: true }))
+app.use(bodyparser.json())
+// app.use(loggerMiddleware)
+// app.use(rateLimiter)
 
 // Apply associations
 app.use("/api", routes)
@@ -105,16 +106,18 @@ app.use(errorHandler)
 // }
 // startServer()
 
-dbConnect().then(() => {
-  console.log("Database connected successfully!!");
-  dbSync();
-}).then(() => {
-  // SetupAssociations();
-  console.log("Database synced successfully!!");
-  app.listen(PORT), () => {
-    console.log("Server is running on port " + PORT);
-  }
-})
+app.listen(PORT, async () => {
+  console.log(`Server is running on port ${PORT}`);
+  dbConnect()
+    .then(() => {
+      console.log("Database is connected");
+      // SetupAssociations();
+      dbSync()
+        .then(() => console.log("Database is connected and synced"))
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
 
 export default app
 

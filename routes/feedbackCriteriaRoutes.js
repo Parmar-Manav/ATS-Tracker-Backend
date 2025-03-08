@@ -9,10 +9,10 @@ import {
 } from "../controllers/feedbackCriteriaController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllFeedbackCriteria);
-router.get("/:id", authMiddleware, getFeedbackCriteriaById);
-router.post("/", authMiddleware, createFeedbackCriteria);
-router.put("/:id", authMiddleware, updateFeedbackCriteria);
-router.delete("/:id", authMiddleware, deleteFeedbackCriteria);
+router.get("/", getAllFeedbackCriteria);
+router.get("/:id", getFeedbackCriteriaById);
+router.post("/", createFeedbackCriteria);
+router.put("/:id", updateFeedbackCriteria);
+router.delete("/:id", deleteFeedbackCriteria);
 
 export default router;

@@ -9,10 +9,10 @@ import {
 } from "../controllers/clientExecutiveController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllClientExecutives);
-router.get("/:id", authMiddleware, getClientExecutiveById);
-router.post("/", authMiddleware, createClientExecutive);
-router.put("/:id", authMiddleware, updateClientExecutive);
-router.delete("/:id", authMiddleware, deleteClientExecutive);
+router.get("/", getAllClientExecutives);
+router.get("/:id", getClientExecutiveById);
+router.post("/", createClientExecutive);
+router.put("/:id", updateClientExecutive);
+router.delete("/:id", deleteClientExecutive);
 
 export default router;

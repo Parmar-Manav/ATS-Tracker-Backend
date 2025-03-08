@@ -9,10 +9,10 @@ import {
 } from "../controllers/onboardingTemplateStructureController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllOnboardingTemplateStructures);
-router.get("/:id", authMiddleware, getOnboardingTemplateStructureById);
-router.post("/", authMiddleware, createOnboardingTemplateStructure);
-router.put("/:id", authMiddleware, updateOnboardingTemplateStructure);
-router.delete("/:id", authMiddleware, deleteOnboardingTemplateStructure);
+router.get("/", getAllOnboardingTemplateStructures);
+router.get("/:id", getOnboardingTemplateStructureById);
+router.post("/", createOnboardingTemplateStructure);
+router.put("/:id", updateOnboardingTemplateStructure);
+router.delete("/:id", deleteOnboardingTemplateStructure);
 
 export default router;

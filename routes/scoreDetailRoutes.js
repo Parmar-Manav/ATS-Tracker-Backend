@@ -9,10 +9,10 @@ import {
 } from "../controllers/scoreDetailController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllScoreDetails);
-router.get("/:id", authMiddleware, getScoreDetailById);
-router.post("/", authMiddleware, createScoreDetail);
-router.put("/:id", authMiddleware, updateScoreDetail);
-router.delete("/:id", authMiddleware, deleteScoreDetail);
+router.get("/", getAllScoreDetails);
+router.get("/:id", getScoreDetailById);
+router.post("/", createScoreDetail);
+router.put("/:id", updateScoreDetail);
+router.delete("/:id", deleteScoreDetail);
 
 export default router;

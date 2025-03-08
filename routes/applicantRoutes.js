@@ -4,10 +4,10 @@ import authMiddleware from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", authMiddleware, applicantController.getAllApplicants);
-router.get("/:id", authMiddleware, applicantController.getApplicantById);
-router.post("/", authMiddleware, applicantController.createApplicant);
-router.put("/:id", authMiddleware, applicantController.updateApplicant);
-router.delete("/:id", authMiddleware, applicantController.deleteApplicant);
+router.get("/", applicantController.getAllApplicants);
+router.get("/:id", applicantController.getApplicantById);
+router.post("/", applicantController.createApplicant);
+router.put("/:id", applicantController.updateApplicant);
+router.delete("/:id", applicantController.deleteApplicant);
 
 export default router;

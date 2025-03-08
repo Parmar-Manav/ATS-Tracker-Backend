@@ -9,10 +9,10 @@ import {
 } from "../controllers/reportController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllReports);
-router.get("/:id", authMiddleware, getReportById);
-router.post("/", authMiddleware, createReport);
-router.put("/:id", authMiddleware, updateReport);
-router.delete("/:id", authMiddleware, deleteReport);
+router.get("/", getAllReports);
+router.get("/:id", getReportById);
+router.post("/", createReport);
+router.put("/:id", updateReport);
+router.delete("/:id", deleteReport);
 
 export default router;

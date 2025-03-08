@@ -9,10 +9,10 @@ import {
 } from "../controllers/jobSkillController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllJobSkills);
-router.get("/:id", authMiddleware, getJobSkillById);
-router.post("/", authMiddleware, createJobSkill);
-router.put("/:id", authMiddleware, updateJobSkill);
-router.delete("/:id", authMiddleware, deleteJobSkill);
+router.get("/", getAllJobSkills);
+router.get("/:id", getJobSkillById);
+router.post("/", createJobSkill);
+router.put("/:id", updateJobSkill);
+router.delete("/:id", deleteJobSkill);
 
 export default router;

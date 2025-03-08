@@ -9,10 +9,10 @@ import {
 } from "../controllers/documentContentController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllDocumentContents);
-router.get("/:id", authMiddleware, getDocumentContentById);
-router.post("/", authMiddleware, createDocumentContent);
-router.put("/:id", authMiddleware, updateDocumentContent);
-router.delete("/:id", authMiddleware, deleteDocumentContent);
+router.get("/", getAllDocumentContents);
+router.get("/:id", getDocumentContentById);
+router.post("/", createDocumentContent);
+router.put("/:id", updateDocumentContent);
+router.delete("/:id", deleteDocumentContent);
 
 export default router;

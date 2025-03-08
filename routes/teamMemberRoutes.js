@@ -9,10 +9,10 @@ import {
 } from "../controllers/teamMemberController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllTeamMembers);
-router.get("/:id", authMiddleware, getTeamMemberById);
-router.post("/", authMiddleware, createTeamMember);
-router.put("/:id", authMiddleware, updateTeamMember);
-router.delete("/:id", authMiddleware, deleteTeamMember);
+router.get("/", getAllTeamMembers);
+router.get("/:id", getTeamMemberById);
+router.post("/", createTeamMember);
+router.put("/:id", updateTeamMember);
+router.delete("/:id", deleteTeamMember);
 
 export default router;

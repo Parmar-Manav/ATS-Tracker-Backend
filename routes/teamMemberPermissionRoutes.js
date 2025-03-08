@@ -9,10 +9,10 @@ import {
 } from "../controllers/teamMemberPermissionController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllTeamMemberPermissions);
-router.get("/:id", authMiddleware, getTeamMemberPermissionById);
-router.post("/", authMiddleware, createTeamMemberPermission);
-router.put("/:id", authMiddleware, updateTeamMemberPermission);
-router.delete("/:id", authMiddleware, deleteTeamMemberPermission);
+router.get("/", getAllTeamMemberPermissions);
+router.get("/:id", getTeamMemberPermissionById);
+router.post("/", createTeamMemberPermission);
+router.put("/:id", updateTeamMemberPermission);
+router.delete("/:id", deleteTeamMemberPermission);
 
 export default router;

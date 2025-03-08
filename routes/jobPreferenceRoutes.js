@@ -9,10 +9,10 @@ import {
 } from "../controllers/jobPreferenceController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllJobPreferences);
-router.get("/:id", authMiddleware, getJobPreferenceById);
-router.post("/", authMiddleware, createJobPreference);
-router.put("/:id", authMiddleware, updateJobPreference);
-router.delete("/:id", authMiddleware, deleteJobPreference);
+router.get("/", getAllJobPreferences);
+router.get("/:id", getJobPreferenceById);
+router.post("/", createJobPreference);
+router.put("/:id", updateJobPreference);
+router.delete("/:id", deleteJobPreference);
 
 export default router;

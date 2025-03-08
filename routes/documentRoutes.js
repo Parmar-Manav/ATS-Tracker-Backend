@@ -10,11 +10,11 @@ import {
 import authMiddleware from "../middlewares/authMiddleware.js";
 import upload from "../middlewares/multermiddleware.js"
 
-router.get("/", authMiddleware, getAllDocuments)
-router.get("/:id", authMiddleware, getDocumentById)
-router.post("/", authMiddleware, upload.single("file"), createDocument)
-router.put("/:id", authMiddleware, upload.single("file"), updateDocument)
-router.delete("/:id", authMiddleware, deleteDocument)
+router.get("/", getAllDocuments)
+router.get("/:id", getDocumentById)
+router.post("/", upload.single("file"), createDocument)
+router.put("/:id", upload.single("file"), updateDocument)
+router.delete("/:id", deleteDocument)
 
 export default router
 

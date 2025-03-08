@@ -9,10 +9,10 @@ import {
 } from "../controllers/tagController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllTags);
-router.get("/:id", authMiddleware, getTagById);
-router.post("/", authMiddleware, createTag);
-router.put("/:id", authMiddleware, updateTag);
-router.delete("/:id", authMiddleware, deleteTag);
+router.get("/", getAllTags);
+router.get("/:id", getTagById);
+router.post("/", createTag);
+router.put("/:id", updateTag);
+router.delete("/:id", deleteTag);
 
 export default router;

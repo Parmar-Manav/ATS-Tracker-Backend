@@ -9,10 +9,10 @@ import {
 } from "../controllers/interviewController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllInterviews);
-router.get("/:id", authMiddleware, getInterviewById);
-router.post("/", authMiddleware, createInterview);
-router.put("/:id", authMiddleware, updateInterview);
-router.delete("/:id", authMiddleware, deleteInterview);
+router.get("/", getAllInterviews);
+router.get("/:id", getInterviewById);
+router.post("/", createInterview);
+router.put("/:id", updateInterview);
+router.delete("/:id", deleteInterview);
 
 export default router;

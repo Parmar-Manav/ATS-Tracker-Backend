@@ -9,10 +9,10 @@ import {
 } from "../controllers/applicantTagController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllApplicantTags);
-router.get("/:id", authMiddleware, getApplicantTagById);
-router.post("/", authMiddleware, createApplicantTag);
-router.put("/:id", authMiddleware, updateApplicantTag);
-router.delete("/:id", authMiddleware, deleteApplicantTag);
+router.get("/", getAllApplicantTags);
+router.get("/:id", getApplicantTagById);
+router.post("/", createApplicantTag);
+router.put("/:id", updateApplicantTag);
+router.delete("/:id", deleteApplicantTag);
 
 export default router;

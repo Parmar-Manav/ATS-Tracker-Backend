@@ -8,5 +8,5 @@ export const dbConnect = async () => {
 export const dbSync = async () => {
   SetupAssociations();
   // return await sequelize.sync({alter:true});
-  return await sequelize.sync({ force: true });
+  return await sequelize.sync({ force: false });
 };

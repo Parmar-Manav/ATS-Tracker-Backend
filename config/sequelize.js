@@ -9,7 +9,7 @@ export const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERN
   // define : {
   //   onDelete : "NO ACTION"
   // },
-  logging: console.log,
+  logging: false,
   dialectOptions: {
     options: {
       encrypt: true,
@@ -19,7 +19,7 @@ export const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERN
         data: true,
         payload: true,
         token: false,
-        log: console.log,
+        log: false,
       },
     },
   },

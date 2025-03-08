@@ -9,10 +9,10 @@ import {
 } from "../controllers/referralController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllReferrals);
-router.get("/:id", authMiddleware, getReferralById);
-router.post("/", authMiddleware, createReferral);
-router.put("/:id", authMiddleware, updateReferral);
-router.delete("/:id", authMiddleware, deleteReferral);
+router.get("/", getAllReferrals);
+router.get("/:id", getReferralById);
+router.post("/", createReferral);
+router.put("/:id", updateReferral);
+router.delete("/:id", deleteReferral);
 
 export default router;

@@ -9,10 +9,10 @@ import {
 } from "../controllers/resumeSectionController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllResumeSections);
-router.get("/:id", authMiddleware, getResumeSectionById);
-router.post("/", authMiddleware, createResumeSection);
-router.put("/:id", authMiddleware, updateResumeSection);
-router.delete("/:id", authMiddleware, deleteResumeSection);
+router.get("/", getAllResumeSections);
+router.get("/:id", getResumeSectionById);
+router.post("/", createResumeSection);
+router.put("/:id", updateResumeSection);
+router.delete("/:id", deleteResumeSection);
 
 export default router;

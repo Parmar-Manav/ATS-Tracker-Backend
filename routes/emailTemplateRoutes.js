@@ -9,10 +9,10 @@ import {
 } from "../controllers/emailTemplateController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllEmailTemplates);
-router.get("/:id", authMiddleware, getEmailTemplateById);
-router.post("/", authMiddleware, createEmailTemplate);
-router.put("/:id", authMiddleware, updateEmailTemplate);
-router.delete("/:id", authMiddleware, deleteEmailTemplate);
+router.get("/", getAllEmailTemplates);
+router.get("/:id", getEmailTemplateById);
+router.post("/", createEmailTemplate);
+router.put("/:id", updateEmailTemplate);
+router.delete("/:id", deleteEmailTemplate);
 
 export default router;

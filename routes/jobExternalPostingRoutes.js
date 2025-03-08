@@ -9,10 +9,10 @@ import {
 } from "../controllers/jobExternalPostingController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllJobExternalPostings);
-router.get("/:id", authMiddleware, getJobExternalPostingById);
-router.post("/", authMiddleware, createJobExternalPosting);
-router.put("/:id", authMiddleware, updateJobExternalPosting);
-router.delete("/:id", authMiddleware, deleteJobExternalPosting);
+router.get("/", getAllJobExternalPostings);
+router.get("/:id", getJobExternalPostingById);
+router.post("/", createJobExternalPosting);
+router.put("/:id", updateJobExternalPosting);
+router.delete("/:id", deleteJobExternalPosting);
 
 export default router;

@@ -9,10 +9,10 @@ import {
 } from "../controllers/userActivityController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllUserActivities);
-router.get("/:id", authMiddleware, getUserActivityById);
-router.post("/", authMiddleware, createUserActivity);
-router.put("/:id", authMiddleware, updateUserActivity);
-router.delete("/:id", authMiddleware, deleteUserActivity);
+router.get("/", getAllUserActivities);
+router.get("/:id", getUserActivityById);
+router.post("/", createUserActivity);
+router.put("/:id", updateUserActivity);
+router.delete("/:id", deleteUserActivity);
 
 export default router;

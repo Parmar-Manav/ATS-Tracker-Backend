@@ -9,10 +9,10 @@ import {
 } from "../controllers/operationController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllOperations);
-router.get("/:id", authMiddleware, getOperationById);
-router.post("/", authMiddleware, createOperation);
-router.put("/:id", authMiddleware, updateOperation);
-router.delete("/:id", authMiddleware, deleteOperation);
+router.get("/", getAllOperations);
+router.get("/:id", getOperationById);
+router.post("/", createOperation);
+router.put("/:id", updateOperation);
+router.delete("/:id", deleteOperation);
 
 export default router;

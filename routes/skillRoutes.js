@@ -9,10 +9,10 @@ import {
 } from "../controllers/skillController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllSkills);
-router.get("/:id", authMiddleware, getSkillById);
-router.post("/", authMiddleware, createSkill);
-router.put("/:id", authMiddleware, updateSkill);
-router.delete("/:id", authMiddleware, deleteSkill);
+router.get("/", getAllSkills);
+router.get("/:id", getSkillById);
+router.post("/", createSkill);
+router.put("/:id", updateSkill);
+router.delete("/:id", deleteSkill);
 
 export default router;

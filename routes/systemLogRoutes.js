@@ -9,10 +9,10 @@ import {
 } from "../controllers/systemLogController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllSystemLogs);
-router.get("/:id", authMiddleware, getSystemLogById);
-router.post("/", authMiddleware, createSystemLog);
-router.put("/:id", authMiddleware, updateSystemLog);
-router.delete("/:id", authMiddleware, deleteSystemLog);
+router.get("/", getAllSystemLogs);
+router.get("/:id", getSystemLogById);
+router.post("/", createSystemLog);
+router.put("/:id", updateSystemLog);
+router.delete("/:id", deleteSystemLog);
 
 export default router;

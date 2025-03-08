@@ -9,10 +9,10 @@ import {
 } from "../controllers/onboardingTaskController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllOnboardingTasks);
-router.get("/:id", authMiddleware, getOnboardingTaskById);
-router.post("/", authMiddleware, createOnboardingTask);
-router.put("/:id", authMiddleware, updateOnboardingTask);
-router.delete("/:id", authMiddleware, deleteOnboardingTask);
+router.get("/", getAllOnboardingTasks);
+router.get("/:id", getOnboardingTaskById);
+router.post("/", createOnboardingTask);
+router.put("/:id", updateOnboardingTask);
+router.delete("/:id", deleteOnboardingTask);
 
 export default router;

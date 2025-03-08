@@ -9,10 +9,10 @@ import {
 } from "../controllers/onboardingProgressController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllOnboardingProgresses);
-router.get("/:id", authMiddleware, getOnboardingProgressById);
-router.post("/", authMiddleware, createOnboardingProgress);
-router.put("/:id", authMiddleware, updateOnboardingProgress);
-router.delete("/:id", authMiddleware, deleteOnboardingProgress);
+router.get("/", getAllOnboardingProgresses);
+router.get("/:id", getOnboardingProgressById);
+router.post("/", createOnboardingProgress);
+router.put("/:id", updateOnboardingProgress);
+router.delete("/:id", deleteOnboardingProgress);
 
 export default router;

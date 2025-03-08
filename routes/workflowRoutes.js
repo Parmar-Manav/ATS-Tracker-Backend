@@ -9,10 +9,10 @@ import {
 } from "../controllers/workflowController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllWorkflows);
-router.get("/:id", authMiddleware, getWorkflowById);
-router.post("/", authMiddleware, createWorkflow);
-router.put("/:id", authMiddleware, updateWorkflow);
-router.delete("/:id", authMiddleware, deleteWorkflow);
+router.get("/", getAllWorkflows);
+router.get("/:id", getWorkflowById);
+router.post("/", createWorkflow);
+router.put("/:id", updateWorkflow);
+router.delete("/:id", deleteWorkflow);
 
 export default router;

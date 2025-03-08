@@ -9,10 +9,10 @@ import {
 } from "../controllers/analyticsController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllAnalytics);
-router.get("/:id", authMiddleware, getAnalyticsById);
-router.post("/", authMiddleware, createAnalytics);
-router.put("/:id", authMiddleware, updateAnalytics);
-router.delete("/:id", authMiddleware, deleteAnalytics);
+router.get("/", getAllAnalytics);
+router.get("/:id", getAnalyticsById);
+router.post("/", createAnalytics);
+router.put("/:id", updateAnalytics);
+router.delete("/:id", deleteAnalytics);
 
 export default router;

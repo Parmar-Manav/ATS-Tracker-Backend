@@ -9,10 +9,10 @@ import {
 } from "../controllers/integrationController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllIntegrations);
-router.get("/:id", authMiddleware, getIntegrationById);
-router.post("/", authMiddleware, createIntegration);
-router.put("/:id", authMiddleware, updateIntegration);
-router.delete("/:id", authMiddleware, deleteIntegration);
+router.get("/", getAllIntegrations);
+router.get("/:id", getIntegrationById);
+router.post("/", createIntegration);
+router.put("/:id", updateIntegration);
+router.delete("/:id", deleteIntegration);
 
 export default router;

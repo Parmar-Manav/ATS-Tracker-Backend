@@ -9,10 +9,10 @@ import {
 } from "../controllers/jobController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllJobs);
-router.get("/:id", authMiddleware, getJobById);
-router.post("/", authMiddleware, createJob);
-router.put("/:id", authMiddleware, updateJob);
-router.delete("/:id", authMiddleware, deleteJob);
+router.get("/", getAllJobs);
+router.get("/:id", getJobById);
+router.post("/", createJob);
+router.put("/:id", updateJob);
+router.delete("/:id", deleteJob);
 
 export default router;

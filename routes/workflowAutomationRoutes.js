@@ -9,10 +9,10 @@ import {
 } from "../controllers/workflowAutomationController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
-router.get("/", authMiddleware, getAllWorkflowAutomations);
-router.get("/:id", authMiddleware, getWorkflowAutomationById);
-router.post("/", authMiddleware, createWorkflowAutomation);
-router.put("/:id", authMiddleware, updateWorkflowAutomation);
-router.delete("/:id", authMiddleware, deleteWorkflowAutomation);
+router.get("/", getAllWorkflowAutomations);
+router.get("/:id", getWorkflowAutomationById);
+router.post("/", createWorkflowAutomation);
+router.put("/:id", updateWorkflowAutomation);
+router.delete("/:id", deleteWorkflowAutomation);
 
 export default router;
