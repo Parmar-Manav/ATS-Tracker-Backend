@@ -31,6 +31,15 @@ export const createApplicant = async (req, res) => {
   }
 }
 
+export const bulkCreateApplicants = async (req, res) => {
+  try {
+    const newApplicants = await Applicant.bulkCreate(req.body);
+    res.status(201).json({ message: "Applicants created successfully", applicants: newApplicants });
+  } catch (error) {
+    res.status(500).json({ message: "Error creating applicants", error: error.message });
+  }
+};
+
 export const updateApplicant = async (req, res) => {
   try {
     const [updated] = await Applicant.update(req.body, {
@@ -60,4 +69,32 @@ export const deleteApplicant = async (req, res) => {
     res.status(500).json({ message: "Error deleting applicant", error: error.message })
   }
 }
+
+export const bulkDeleteApplicants = async (req, res) => {
+  try {
+    const { ids } = req.body;
+
+    // ✅ Validate: Ensure IDs exist and are an array of numbers
+    if (!ids || !Array.isArray(ids) || !ids.every(id => typeof id === "number")) {
+      return res.status(400).json({ message: "Invalid request, expected an array of numeric IDs" });
+    }
+
+    console.log("Deleting applicants with IDs:", ids); // Debugging Log
+
+    // Perform bulk delete
+    const deleted = await Applicant.destroy({
+      where: { id: ids },
+    });
+
+    if (deleted > 0) {
+      res.status(200).json({ message: "Applicants deleted successfully", count: deleted });
+    } else {
+      res.status(404).json({ message: "No applicants found with the provided IDs" });
+    }
+  } catch (error) {
+    console.error("Bulk delete error:", error); // Debugging Log
+    res.status(500).json({ message: "Error deleting applicants", error: error.message });
+  }
+};
+
 

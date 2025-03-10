@@ -46,17 +46,17 @@ export const Job = sequelize.define(
         },
         locationType: {
             type: DataTypes.STRING,
-            allowNull:false,
+            allowNull: false,
             validate: {
-                isIn: { 
-                    args: [["Remote", "Onsite", "Hybrid"]], 
-                    msg: "Location type must be one of: 'Remote', 'Onsite', or 'Hybrid'." 
+                isIn: {
+                    args: [["Remote", "Onsite", "Hybrid"]],
+                    msg: "Location type must be one of: 'Remote', 'Onsite', or 'Hybrid'."
                 },
             },
         },
         salaryRangeMin: {
             type: DataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
             validate: {
                 isInt: { msg: "Minimum salary must be an integer." },
                 min: { args: [0], msg: "Minimum salary cannot be negative." },
@@ -82,5 +82,6 @@ export const Job = sequelize.define(
             { fields: ["title"] },
             { fields: ["department"] },
         ],
+        paranoid: true,
     },
 )

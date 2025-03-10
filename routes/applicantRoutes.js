@@ -7,7 +7,10 @@ const router = express.Router();
 router.get("/", applicantController.getAllApplicants);
 router.get("/:id", applicantController.getApplicantById);
 router.post("/", applicantController.createApplicant);
+router.post("/bulk",applicantController.bulkCreateApplicants);
 router.put("/:id", applicantController.updateApplicant);
+router.delete("/bulk-delete", applicantController.bulkDeleteApplicants);
 router.delete("/:id", applicantController.deleteApplicant);
+
 
 export default router;
