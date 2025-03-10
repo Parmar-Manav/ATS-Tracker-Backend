@@ -16,6 +16,18 @@ export const OnboardingTemplateStructure = sequelize.define(
         templateStructure: {
             type: DataTypes.TEXT,
             allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "Template structure is required.",
+                },
+                notEmpty: {
+                    msg: "Template structure cannot be empty.",
+                },
+                len: {
+                    args: [5, 5000],
+                    msg: "Template structure must be between 5 and 5000 characters.",
+                },
+            },
         },
     },
     {

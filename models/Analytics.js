@@ -12,6 +12,11 @@ export const Analytics = sequelize.define(
         metricName: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notEmpty: true, // Ensures it's not an empty string
+                len: [3, 255], // Ensures metricName has 3-255 characters
+                isAlpha: true, // Ensures only letters (no numbers/symbols)
+            },
         },
         metricData: {
             type: DataTypes.TEXT,
@@ -20,10 +25,18 @@ export const Analytics = sequelize.define(
         calculationDate: {
             type: DataTypes.DATE,
             allowNull: false,
+            validate: {
+                isDate: true, // Ensures it's a valid date format
+                isBefore: new Date().toISOString(), // Ensures past date (no future values)
+            },
         },
         entityType: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                isIn: [["Job", "User", "Company"]], // Restrict possible values
+                notEmpty: true, // Ensures it's not empty
+            },
         },
         // entityId: {
         //     type: DataTypes.INTEGER,
@@ -32,5 +45,9 @@ export const Analytics = sequelize.define(
     },
     {
         tableName: "analytics",
+        indexes: [
+            { fields: ["calculationDate"] },
+            { fields: ["entityType"] },
+        ],
     }
 )

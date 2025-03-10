@@ -20,6 +20,22 @@ export const ApplicantSkill = sequelize.define(
         proficiencyLevel: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "Proficiency level is required.",
+                },
+                isInt: {
+                    msg: "Proficiency level must be an integer.",
+                },
+                min: {
+                    args: [1],
+                    msg: "Proficiency level must be at least 1.",
+                },
+                max: {
+                    args: [10],
+                    msg: "Proficiency level must be at most 10.",
+                },
+            },
         },
     },
     {

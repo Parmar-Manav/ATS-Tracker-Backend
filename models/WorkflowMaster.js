@@ -16,6 +16,18 @@ export const WorkflowMaster = sequelize.define(
         workflowName: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notNull: {
+                    msg: "Workflow name is required.",
+                },
+                notEmpty: {
+                    msg: "Workflow name cannot be empty.",
+                },
+                len: {
+                    args: [3, 255],
+                    msg: "Workflow name must be between 3 and 255 characters.",
+                },
+            },
         },
     },
     {

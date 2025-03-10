@@ -12,26 +12,62 @@ export const Applicant = sequelize.define(
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notEmpty: true, // Ensures it's not an empty string
+                len: [2, 50], // Minimum 2 characters, maximum 50
+                isAlpha: true, // Ensures only letters (no numbers or symbols)
+            },
         },
         lastName: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notEmpty: true,
+                len: [2, 50],
+                isAlpha: true,
+            },
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
+            validate: {
+                notEmpty: true,
+                isEmail: true, // Ensures valid email format
+            },
         },
-        phone: DataTypes.STRING,
-        preferences: DataTypes.TEXT,
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isNumeric: true, // Ensures only numbers
+                len: [10, 15], // Ensures phone number is between 10 and 15 digits
+            },
+        },
+        preferences: {
+            type: DataTypes.TEXT,
+            validate: {
+                notEmpty: false, // Optional field but cannot be empty if provided
+                len: [0, 500], // Restrict text length (0 allows it to be null)
+            },
+        },
         portalAccess: {
             type: DataTypes.STRING,
+            validate: {
+                isIn: [["Admin", "User", "Guest"]], // Restrict values
+            },
         },
         languagePreference: {
             type: DataTypes.STRING,
+            validate: {
+                isIn: [["English", "Hindi"]], // Restrict values
+            },
         },
     },
     {
         tableName: "applicants",
+        indexes: [
+            { fields: ["email"], unique: true }, // Ensure uniqueness at DB level
+        ],
     },
 )

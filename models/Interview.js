@@ -15,11 +15,26 @@ export const Interview = sequelize.define(
         // },
         interviewDate: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: false,commentvalidate: {
+                notNull: { msg: "Interview type is required." },
+                notEmpty: { msg: "Interview type cannot be empty." },
+                isIn: {
+                    args: [["Technical", "HR", "Managerial", "Final"]],
+                    msg: "Interview type must be one of: Technical, HR, Managerial, Final.",
+                },
+            },
         },
         interviewType: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notNull: { msg: "Interview type is required." },
+                notEmpty: { msg: "Interview type cannot be empty." },
+                isIn: {
+                    args: [["Technical", "HR", "Managerial", "Final"]],
+                    msg: "Interview type must be one of: Technical, HR, Managerial, Final.",
+                },
+            },
         },
         // interviewerId: {
         //     type: DataTypes.INTEGER,
@@ -28,9 +43,21 @@ export const Interview = sequelize.define(
         status: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notNull: { msg: "Status is required." },
+                notEmpty: { msg: "Status cannot be empty." },
+                isIn: {
+                    args: [["Scheduled", "Completed", "Cancelled", "Rescheduled"]],
+                    msg: "Status must be one of: Scheduled, Completed, Cancelled, Rescheduled.",
+                },
+            },
         },
     },
     {
         tableName: "interviews",
+        indexes: [
+            { fields: ["interviewDate"] }, // Index for optimized date queries
+            { fields: ["status"] }, // Index for faster filtering by status
+        ],
     },
 )

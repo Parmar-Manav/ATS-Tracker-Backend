@@ -2,13 +2,14 @@ import { sequelize } from "../config/sequelize.js"
 import { DataTypes } from "sequelize";
 
 export const ApplicantTag = sequelize.define(
-    "ApplicantTag",
-    {
-      applicantTagId: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
+  "ApplicantTag",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
     //   applicant_id: {
     //     type: DataTypes.INTEGER,
     //     allowNull: false,
@@ -17,8 +18,8 @@ export const ApplicantTag = sequelize.define(
     //     type: DataTypes.INTEGER,
     //     allowNull: false,
     //   },
-    },
-    {
-      tableName: "applicant_tags",
-    }
-  );
+  },
+  {
+    tableName: "applicant_tags",
+  }
+);
