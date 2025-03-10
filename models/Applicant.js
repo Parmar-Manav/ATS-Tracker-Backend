@@ -52,10 +52,13 @@ export const Applicant = sequelize.define(
             },
         },
         portalAccess: {
-            type: DataTypes.STRING,
-            validate: {
-                isIn: [["Admin", "User", "Guest"]], // Restrict values
-            },
+            type: DataTypes.ENUM("Admin", "User", "Guest"),
+            allowNull: false,
+        },
+        status: {
+            type: DataTypes.ENUM("Applied", "Interview", "Offer", "Rejected"), // Updated statuses
+            allowNull: false,
+            defaultValue: "Applied", // Default status when a new applicant is created
         },
         languagePreference: {
             type: DataTypes.STRING,
