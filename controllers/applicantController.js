@@ -102,7 +102,13 @@ export const bulkDeleteApplicants = async (req, res) => {
     const { ids } = req.body;
 
     // ✅ Validate: Ensure IDs exist and are an array of numbers
-    if (!ids || !Array.isArray(ids) || !ids.every(id => typeof id === "number")) {
+    if (
+      !ids || 
+      !Array.isArray(ids) || 
+      ids.length === 0 || 
+      !ids.every(id => Number.isInteger(id))
+    ) {
+      console.log("Received IDs:", ids); // Debugging Log
       return res.status(400).json({ message: "Invalid request, expected an array of numeric IDs" });
     }
 
@@ -123,6 +129,7 @@ export const bulkDeleteApplicants = async (req, res) => {
     res.status(500).json({ message: "Error deleting applicants", error: error.message });
   }
 };
+
 
 export const searchApplicants = async (req, res) => {
   try {
